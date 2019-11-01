@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import styled from "styled-components"
+import SEO from "./seo"
 
 const PostContent = styled.main `
   font-family:Raleway;
@@ -63,6 +64,7 @@ export default ({data}) => {
   const post = data.markdownRemark
   return (
     <Layout>
+      <SEO title={post.frontmatter.title + post.frontmatter.subheading} />
     <PostContent>
 
       <section className="markdown">
