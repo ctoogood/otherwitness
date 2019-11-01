@@ -1,8 +1,13 @@
 module.exports = {
   siteMetadata: {
     title: `Other Witness`,
-    description: `Human Rights Journalism`,
+    subtitle: `Human Rights Journalism`,
+    description: `Other Witness is a collection of links to great & insightful human rights journalism from across the web. The site also features writings based around the theme of international human rights. `,
     author: `Calum Toogood`,
+    siteUrl: 'https://www.otherwitness.com',
+    image: "https://res.cloudinary.com/dhat0b0ey/image/upload/v1572628562/otherwitness/owlogo.png",
+    twitterUsername:"@otherwitness",
+    keywords: "human rights, journalism"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

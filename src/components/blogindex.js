@@ -166,8 +166,8 @@ const BlogIndex = () => (
           
         ))}
 
-                  </section>
-                  {/*<Button><Link classname="button-container" to="/posts"><button>View All</button></Link></Button>*/}
+          </section>
+          {/*<Button><Link classname="button-container" to="/posts"><button>View All</button></Link></Button>*/}
 
         </ArchiveList>
       </>
