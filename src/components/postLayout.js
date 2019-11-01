@@ -64,7 +64,10 @@ export default ({data}) => {
   const post = data.markdownRemark
   return (
     <Layout>
-      <SEO title={post.frontmatter.title + post.frontmatter.subheading} />
+      <SEO 
+        title={post.frontmatter.title + ` - ` + post.frontmatter.subheading}
+        description={post.frontmatter.description}/>
+         />
     <PostContent>
 
       <section className="markdown">
@@ -86,6 +89,7 @@ export const query = graphql`
         title
         date(formatString: "MMMM DD, YYYY" )
         subheading
+        description
       }
     }
   }
