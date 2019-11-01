@@ -124,7 +124,7 @@ const FeaturedPost = () => (
       <>
         <ArchiveList>
         <section className="featured-grid">
-          <p>Featured Stories</p>
+          <p>Featured Posts</p>
         {allMarkdownRemark.edges.map(edges => (
           
           <Link className="post-link" to={`/${edges.node.frontmatter.slug}`}>

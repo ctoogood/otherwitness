@@ -148,7 +148,7 @@ const BlogIndex = () => (
       <>
         <ArchiveList>
         <section className="featured-grid">
-          <p>All Stories</p>
+          <p>All Posts</p>
         {allMarkdownRemark.edges.map(edges => (
           
           <Link className="post-link" to={`/${edges.node.frontmatter.slug}`}>
