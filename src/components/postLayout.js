@@ -67,7 +67,6 @@ export default ({data}) => {
       <SEO 
         title={post.frontmatter.title + ` - ` + post.frontmatter.subheading}
         description={post.frontmatter.description}/>
-         />
     <PostContent>
 
       <section className="markdown">
