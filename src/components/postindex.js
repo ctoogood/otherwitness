@@ -1,6 +1,7 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 import styled from 'styled-components'
+import Img from "gatsby-image"
 
 const ArchiveList = styled.main `
   margin-top:2rem;
@@ -34,7 +35,6 @@ const ArchiveList = styled.main `
     
 
   }
-
   
 
   h3, h4, h5, h6 {
@@ -81,7 +81,7 @@ const ArchiveList = styled.main `
   .post-image {
     position:relative;
     width:100%;
-    height:60vh;
+    height:40vh;
     transition: transform 10s cubic-bezier(.35,.9,.5,1);
 
   }
@@ -129,6 +129,9 @@ const FeaturedPost = () => (
           
           <Link className="post-link" to={`/${edges.node.frontmatter.slug}`}>
           <section className="archive__list-item">
+            <div className="image-container">
+              <Img className="post-image" fluid={edges.node.frontmatter.featuredImage.childImageSharp.fluid} />
+            </div>
           <section className="text-container">
             <h3>{edges.node.frontmatter.title}</h3>
             <h4>{edges.node.frontmatter.subheading}</h4>
@@ -167,6 +170,13 @@ query postsquery {
           subheading
           date(formatString: "MMMM DD, YYYY" )
           slug
+          featuredImage {
+            childImageSharp {
+              fluid(maxWidth:900) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }

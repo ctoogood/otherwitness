@@ -72,7 +72,7 @@ const Header = ({ siteTitle }) => (
   <HeaderMain>
     <PageTitle>
       <Link to="/">
-        <img src={title} alt=''/>
+        <img src={title} alt='Other Witness'/>
       </Link>
     </PageTitle>
     {/*<ul className="title-links">

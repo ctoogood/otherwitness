@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import SEO from "./seo"
+import Img from "gatsby-image"
 
 const PostContent = styled.main `
   font-family:Raleway;
@@ -33,17 +34,14 @@ const PostContent = styled.main `
   }
 
   .image-container {
-    max-height:75vh;
+    height:100%;
     background-color:#F1F1F1;
-    border-bottom:0.5rem solid #AC6D6D;
-
   }
 
-  .image {
+  .post-image {
     width:100%;
-    max-height:75vh;
+    max-height:50vh;
     margin:auto;
-    border-bottom:0.5rem solid #AC6D6D;
   }
 
   .markdown {
@@ -70,8 +68,12 @@ export default ({data}) => {
     <PostContent>
 
       <section className="markdown">
+        <div className="image-container">
+          <Img className="post-image" fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />
+        </div>
         <h1>{post.frontmatter.title}</h1>
         <h2><span><em>{post.frontmatter.subheading}</em></span></h2>
+
         <h3>{post.frontmatter.date}</h3>
         <div dangerouslySetInnerHTML={{__html: post.html }} />
       </section>
@@ -89,6 +91,13 @@ export const query = graphql`
         date(formatString: "MMMM DD, YYYY" )
         subheading
         description
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth:1200) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
