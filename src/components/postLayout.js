@@ -126,7 +126,7 @@ const PostContent = styled.main `
 
 export default ({data}) => {
   const post = data.markdownRemark
-  const ogImagePath = post.frontmatter.featuredImage
+  const ogImagePath = post.frontmatter.featuredImage.childImageSharp.fluid.src
 
   return (
     <Layout>
@@ -164,6 +164,7 @@ export const query = graphql`
           childImageSharp {
             fluid(maxWidth:1200) {
               ...GatsbyImageSharpFluid
+              src
             }
           }
         }
