@@ -126,10 +126,13 @@ const PostContent = styled.main `
 
 export default ({data}) => {
   const post = data.markdownRemark
+  const ogImagePath = post.frontmatter.featuredImage
+
   return (
     <Layout>
       <SEO 
         title={post.frontmatter.title + ` - ` + post.frontmatter.subheading}
+        image={ogImagePath}
         description={post.frontmatter.description}/>
     <PostContent>
 
