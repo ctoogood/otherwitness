@@ -61,7 +61,7 @@ const PostContent = styled.main `
   }
 
   .HrjLink {
-    padding:.5rem;
+    padding:1rem;
     margin:0;
     margin-bottom:3rem;
     box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
@@ -70,9 +70,12 @@ const PostContent = styled.main `
 
 
     h2 {
-      grid-area:header;
       margin-bottom:0;
       color: #707070;
+    }
+
+    .hrjtitle {
+      grid-area:header;
     }
 
     
@@ -82,6 +85,14 @@ const PostContent = styled.main `
       font-style:italic;
       margin:0rem;
       margin-bottom:0.5rem;
+    }
+
+    div {
+      grid-area:text;
+      font-weight:bold;
+      font-style:italic;
+      margin-top:2rem;
+      margin-bottom:2rem;
     }
 
     p {
@@ -95,9 +106,12 @@ const PostContent = styled.main `
     }
 
     a {
+      text-decoration:none;
+    }
+
+    .readMore {
       grid-area:link;
       text-align:right;
-      font-weight:bold;
     }
 
     @media only screen and (min-width:640px) {
@@ -106,9 +120,11 @@ const PostContent = styled.main `
         grid-template-areas:
         "header header"
         "subtitle subtitle"
-        "text text"
         "img desc"
-        "img link";
+        "img desc"
+        "text text"
+        ". link";
+
         padding:2rem;
 
         img {
