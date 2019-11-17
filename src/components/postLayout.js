@@ -54,6 +54,12 @@ const PostContent = styled.main `
     font-style:italic;
   }
 
+  h1 {
+    margin-bottom: 3rem;
+    text-decoration:underline;
+    
+  }
+
   .HrjLink {
     padding:.5rem;
     margin:0;
@@ -66,7 +72,10 @@ const PostContent = styled.main `
     h2 {
       grid-area:header;
       margin-bottom:0;
+      color: #707070;
     }
+
+    
 
     h3 {
       grid-area:subtitle;
@@ -88,6 +97,7 @@ const PostContent = styled.main `
     a {
       grid-area:link;
       text-align:right;
+      font-weight:bold;
     }
 
     @media only screen and (min-width:640px) {

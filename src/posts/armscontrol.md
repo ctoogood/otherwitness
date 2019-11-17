@@ -2,7 +2,7 @@
  title: Arms Control
  subheading: The Arms Trade
  slug: /armscontrol
- date: '2019-11-17'
+ date: '2019-11-16'
  featuredImage: '../images/jet.jpg'
 ---
 
