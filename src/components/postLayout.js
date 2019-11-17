@@ -133,7 +133,7 @@ export default ({data}) => {
       <SEO 
         title={post.frontmatter.title + ` - ` + post.frontmatter.subheading}
         image={ogImagePath}
-        description={post.frontmatter.description}/>
+        description="human rights journalism links"/>
     <PostContent>
 
       <section className="markdown">
