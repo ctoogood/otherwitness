@@ -2,12 +2,24 @@ import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 import styled from 'styled-components'
 
+import Img from 'gatsby-image'
+
 const ArchiveList = styled.main `
   margin-top:2rem;
   margin-bottom:5rem;
 
   @media only screen and (min-width:1400px) {
-    margin-left:-2rem;
+  }
+
+  p {
+    color:#AC6D6D;
+    padding-top:1rem;
+    padding-left:1rem;
+    margin-bottom:0;
+    max-width:1400px;
+    margin:auto;
+    font-family:Raleway;
+    font-size:1.2rem;
   }
 
 
@@ -21,17 +33,12 @@ const ArchiveList = styled.main `
 
   @media only screen and (min-width:640px) {
     display:grid;
-    grid-template-columns: 5% 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     position:relative;
-    left:-1rem;
 
     div {
       width:100%;
     }
-    
-
-    
-
   }
 
   
@@ -90,19 +97,7 @@ const ArchiveList = styled.main `
     overflow:hidden;
     }
 
-    p {
-      color:#AC6D6D;
-      padding-top:1rem;
-      padding-left:1rem;
-      margin-bottom:0;
-
-      @media only screen and (min-width:640px) {
-        writing-mode: vertical-rl;
-        text-orientation:sideways;
-      }
-      
-      
-    }
+    
 
     .post-link {
       text-decoration:none;
@@ -114,6 +109,20 @@ const ArchiveList = styled.main `
 
     .button-container {
     }
+
+    .post-image {
+      position:relative;
+      width:100%;
+      height:30vh;
+      transition: transform 10s cubic-bezier(.35,.9,.5,1);
+  
+    }
+  
+    .image-container {
+      width:100%;
+      height:100%;
+      overflow:hidden;
+      }
 
 
 `
@@ -147,12 +156,16 @@ const BlogIndex = () => (
     render={({allMarkdownRemark}) => (
       <>
         <ArchiveList>
+        <p>All Posts</p>
         <section className="featured-grid">
-          <p>All Posts</p>
+          
         {allMarkdownRemark.edges.map(edges => (
           
           <Link className="post-link" to={`/${edges.node.frontmatter.slug}`}>
           <section className="archive__list-item">
+            <div className="image-container">
+              <Img className="post-image" fluid={edges.node.frontmatter.featuredImage.childImageSharp.fluid} />
+            </div>
           <section className="text-container">
             <h3>{edges.node.frontmatter.title}</h3>
             <h4>{edges.node.frontmatter.subheading}</h4>
@@ -192,6 +205,13 @@ query blogquery {
           subheading
           date(formatString: "MMMM DD, YYYY" )
           slug
+          featuredImage {
+            childImageSharp {
+              fluid(maxWidth:900) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }

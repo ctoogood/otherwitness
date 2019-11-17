@@ -54,7 +54,63 @@ const PostContent = styled.main `
     font-style:italic;
   }
 
+  .HrjLink {
+    padding:.5rem;
+    margin:0;
+    margin-bottom:3rem;
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+    border-radius:5px;
+    border-top:.5rem solid rgba(172,109,109,0.6);
+
+
+    h2 {
+      grid-area:header;
+      margin-bottom:0;
+    }
+
+    h3 {
+      grid-area:subtitle;
+      font-style:italic;
+      margin:0rem;
+      margin-bottom:0.5rem;
+    }
+
+    p {
+      grid-area:desc;
+    }
+    
+    img {
+      grid-area:img;
+      object-fit:cover;
+      height:100%;
+    }
+
+    a {
+      grid-area:link;
+      text-align:right;
+    }
+
+    @media only screen and (min-width:640px) {
+      @supports(display:grid) {
+        display:grid;
+        grid-template-areas:
+        "header header"
+        "subtitle subtitle"
+        "text text"
+        "img desc"
+        "img link";
+        padding:2rem;
+
+        img {
+          padding-right:0.5rem;
+        }
+      }
+    }
+  }
+
 `
+   
+
 
 
 
@@ -75,7 +131,7 @@ export default ({data}) => {
         <h2><span><em>{post.frontmatter.subheading}</em></span></h2>
 
         <h3>{post.frontmatter.date}</h3>
-        <div dangerouslySetInnerHTML={{__html: post.html }} />
+        <div className="content" dangerouslySetInnerHTML={{__html: post.html }} />
       </section>
     </PostContent>
     </Layout>
