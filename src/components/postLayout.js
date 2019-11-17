@@ -91,7 +91,7 @@ const PostContent = styled.main `
     img {
       grid-area:img;
       object-fit:cover;
-      height:100%;
+      max-height:100%;
     }
 
     a {
