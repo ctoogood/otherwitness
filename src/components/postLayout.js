@@ -93,6 +93,10 @@ const PostContent = styled.main `
       font-style:italic;
       margin-top:2rem;
       margin-bottom:2rem;
+
+      span {
+        font-weight:normal;
+      }
     }
 
     p {
