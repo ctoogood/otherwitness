@@ -5,7 +5,7 @@ const typography = new Typography({
   baseLineHeight: 1.666,
   headerWeight: 400,
   headerFontFamily: [
-    "Raleway"
+    "Montserrat"
   ],
 
   bodyFontFamily: ["Montserrat"],
@@ -15,6 +15,7 @@ const typography = new Typography({
       name: 'Montserrat',
       styles: [
         '400',
+        '600',
       ],
     },
     {

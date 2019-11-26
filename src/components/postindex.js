@@ -14,7 +14,6 @@ const ArchiveList = styled.main `
     list-style-type:none;
     margin-left:0;
     width:100%;
-    font-family:Raleway;
     max-width:1400px;
     margin:auto;
   
@@ -38,7 +37,6 @@ const ArchiveList = styled.main `
   
 
   h3, h4, h5, h6 {
-    font-family:Raleway;
     color:#707070;
     font-weight:normal;
     margin:0;
@@ -47,9 +45,8 @@ const ArchiveList = styled.main `
   }
 
   h3 {
-    font-weight:bold;
     color:black;
-    font-size:3rem;
+    font-size:2rem;
   }
 
   h4 {
@@ -97,6 +94,7 @@ const ArchiveList = styled.main `
       padding-top:1rem;
       padding-left:1rem;
       margin-bottom:0;
+      font-family:montserrat;
 
       @media only screen and (min-width:640px) {
         writing-mode: vertical-rl;

@@ -12,13 +12,13 @@ const ArchiveList = styled.main `
   }
 
   p {
+    font-family:montserrat;
     color:#AC6D6D;
     padding-top:1rem;
     padding-left:1rem;
     margin-bottom:0;
     max-width:1400px;
     margin:auto;
-    font-family:Raleway;
     font-size:1.2rem;
   }
 
@@ -26,7 +26,6 @@ const ArchiveList = styled.main `
   .featured-grid {
     list-style-type:none;
     width:100%;
-    font-family:Raleway;
     max-width:1400px;
     margin:auto;
   
@@ -44,7 +43,6 @@ const ArchiveList = styled.main `
   
 
   h3, h4, h5 {
-    font-family:Raleway;
     color:#707070;
     font-weight:normal;
     margin:0;
@@ -53,7 +51,6 @@ const ArchiveList = styled.main `
   }
 
   h3 {
-    font-weight:bold;
     color:black;
   }
 

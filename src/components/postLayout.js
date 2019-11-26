@@ -6,7 +6,7 @@ import SEO from "./seo"
 import Img from "gatsby-image"
 
 const PostContent = styled.main `
-  font-family:Raleway;
+  font-family:Montserrat;
   color:#707070;
 
   a {
@@ -23,7 +23,6 @@ const PostContent = styled.main `
   }
 
   h1 {
-    margin-bottom:5px;
     margin-top:2rem;
   }
 
@@ -55,9 +54,23 @@ const PostContent = styled.main `
   }
 
   h1 {
-    margin-bottom: 3rem;
-    text-decoration:underline;
+    margin-bottom: 0.2rem;
     
+  }
+
+  .content {
+    margin-top:3rem;
+
+    h1 {
+      margin-bottom:1.5rem;
+      color:#707070;
+      font-size:2rem;
+
+    }
+
+    p {
+      line-height:1.5;
+    }
   }
 
   .HrjLink {
@@ -78,12 +91,15 @@ const PostContent = styled.main `
       grid-area:header;
     }
 
+    h1 {
+      margin:0;
+    }
+
     
 
     h3 {
       grid-area:subtitle;
       font-style:italic;
-      margin:0rem;
       margin-bottom:0.5rem;
     }
 
@@ -91,7 +107,7 @@ const PostContent = styled.main `
       grid-area:text;
       font-weight:bold;
       font-style:italic;
-      margin-top:2rem;
+      margin-top:0rem;
       margin-bottom:2rem;
 
       span {
@@ -160,7 +176,6 @@ export default ({data}) => {
         </div>
         <h1>{post.frontmatter.title}</h1>
         <h2><span><em>{post.frontmatter.subheading}</em></span></h2>
-
         <h3>{post.frontmatter.date}</h3>
         <div className="content" dangerouslySetInnerHTML={{__html: post.html }} />
       </section>
