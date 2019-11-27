@@ -212,7 +212,7 @@ export default ({data}) => {
       </section>
     </PostContent>
     <ShareIcons>
-        <h3>Share</h3>
+        {/*<h3>Share</h3>
         <ul>
             <li>
                 <a href={`https://www.facebook.com/sharer/sharer.php?u=https://www.johndory.uk/posts${post.frontmatter.slug}`} target="_blank" rel="noopener noreferrer">
@@ -224,7 +224,7 @@ export default ({data}) => {
                     <img src={twitterIcon} alt="twitter" />
                 </a>
             </li>
-        </ul>
+        </ul>*/}
     </ShareIcons>
     </Layout>
   )
