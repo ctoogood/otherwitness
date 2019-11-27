@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 
 const ArchiveList = styled.main `
   margin-top:2rem;
+  font-family:montserrat;
   
   @media only screen and (min-width:1400px) {
     margin-left:-2rem;
@@ -87,14 +88,15 @@ const ArchiveList = styled.main `
     width:100%;
     height:100%;
     overflow:hidden;
+    border-radius:4px;
+
     }
 
-    p {
-      color:#AC6D6D;
-      padding-top:1rem;
-      padding-left:1rem;
-      margin-bottom:0;
-      font-family:montserrat;
+  p {
+    color:#AC6D6D;
+    padding-top:1rem;
+    padding-left:1rem;
+    margin-bottom:0;
 
       @media only screen and (min-width:640px) {
         writing-mode: vertical-rl;
@@ -102,17 +104,42 @@ const ArchiveList = styled.main `
       }
       
       
+  }
+
+  .post-link {
+    text-decoration:none;
+
+    &:hover .post-image {
+      transform:scale(1.1);
     }
+  }
+`
 
-    .post-link {
-      text-decoration:none;
+const Button = styled.section `
+    width:100%;
+    text-align:center;
+    margin-top:2rem;
 
-      &:hover .post-image {
-        transform:scale(1.1);
+    button {
+      border: 1px solid #AC6D6D;
+      padding: .1rem 1rem;
+      margin-top: 1rem;
+      color:#AC6D6D;
+      text-decoration: none;
+      background: none;
+      font-size: 1rem;
+      cursor: pointer;
+      text-align: center;
+      box-shadow: 0px 2px 2px rgba(0,0,0,0.1);
+      margin-bottom:1rem;
+      transition:all 0.5s ease-in-out;
+
+      &:hover {
+        color:white;
+        background-color: #AC6D6D;
       }
     }
-
-
+      
 `
 
 const FeaturedPost = () => (
@@ -145,6 +172,8 @@ const FeaturedPost = () => (
         ))}
                   </section>
 
+                  <Button><Link classname="button-container" to="/articles"><button>View All</button></Link></Button>
+
         </ArchiveList>
       </>
     )}
@@ -156,7 +185,9 @@ export default FeaturedPost
 
 const FEATURED_POSTS_QUERY = graphql`
 query postsquery {
-	allMarkdownRemark(limit:2 sort:{
+  allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/articles/"}},
+    limit:2 
+    sort:{
     order: DESC,
     fields:[frontmatter___date]
   }) {

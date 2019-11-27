@@ -16,7 +16,7 @@ import Email from "./email"
 
 const Footer = styled.section `
   background-color:#DCDCDC;
-  font-family:Raleway;
+  font-family:Montserrat;
   text-align:center;
   padding:2rem;
 `

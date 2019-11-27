@@ -11,15 +11,16 @@ const ArchiveList = styled.main `
   @media only screen and (min-width:1400px) {
   }
 
-  p {
-    font-family:montserrat;
+  h2 {
+    font-family: montserrat;
+    font-weight:normal;
     color:#AC6D6D;
-    padding-top:1rem;
-    padding-left:1rem;
-    margin-bottom:0;
+    padding:2rem;
+    padding-bottom:4rem;;
     max-width:1400px;
     margin:auto;
-    font-size:1.2rem;
+    font-size:2rem;
+    text-align:center;
   }
 
 
@@ -143,6 +144,11 @@ const Button = styled.section `
       font-family:montserrat;
       margin-bottom:1rem;
       transition:all 0.3s ease-in-out;
+
+      &:hover {
+        color:white;
+        background-color: #AC6D6D;
+      }
     }
       
 `
@@ -153,7 +159,7 @@ const BlogIndex = () => (
     render={({allMarkdownRemark}) => (
       <>
         <ArchiveList>
-        <p>All Posts</p>
+        <h2>HUMAN RIGHTS JOURNALISM LINKS</h2>
         <section className="featured-grid">
           
         {allMarkdownRemark.edges.map(edges => (
@@ -177,7 +183,7 @@ const BlogIndex = () => (
         ))}
 
           </section>
-          {/*<Button><Link classname="button-container" to="/posts"><button>View All</button></Link></Button>*/}
+          <Button><Link classname="button-container" to="/hrjlinks"><button>View All</button></Link></Button>
 
         </ArchiveList>
       </>
@@ -190,7 +196,9 @@ export default BlogIndex
 
 const BLOG_POSTS_QUERY = graphql`
 query blogquery {
-	allMarkdownRemark(sort:{
+  allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/hrjlinks/"}},
+    limit:3,
+    sort:{
     order: DESC,
     fields:[frontmatter___date]
   }) {

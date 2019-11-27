@@ -22,7 +22,7 @@ exports.createPages = ({ graphql, actions }) => {
                         fields {              
                             slug            
                         }          
-                    }        
+                    }       
                 }      
             }    
         }  `
@@ -34,7 +34,33 @@ exports.createPages = ({ graphql, actions }) => {
                     context: {                    
                         slug: node.fields.slug,        
                     },      
-                })    
+                }) 
+                
+                const posts = result.data.allMarkdownRemark.edges
+                const postsPerPage = 9;
+                const numPages = Math.ceil(posts.length / postsPerPage);
+
+                Array.from({ length: numPages }).forEach((_, i) => {
+                createPage({
+                    path: i === 0 ? `/articles` : `/${i + 1}`,
+                    component: path.resolve("./src/components/articlelist.js"),
+                    context: {     
+                        limit: postsPerPage,      
+                        skip: i * postsPerPage,
+                        numPages,      
+                        currentPage: i + 1    }  });
+                });
+
+                Array.from({ length: numPages }).forEach((_, i) => {
+                    createPage({
+                        path: i === 0 ? `/hrjlinks` : `/${i + 1}`,
+                        component: path.resolve("./src/components/linkslist.js"),
+                        context: {     
+                            limit: postsPerPage,      
+                            skip: i * postsPerPage,
+                            numPages,      
+                            currentPage: i + 1    }  });
+                    });
             }) 
         })
     }

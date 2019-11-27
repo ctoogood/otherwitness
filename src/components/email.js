@@ -22,7 +22,7 @@ padding-bottom:2rem;
     }
 
     h3 {
-        font:2rem Raleway;
+        font:2rem Montserrat;
         font-weight:normal;
         text-align:center;
         padding-top:1rem;

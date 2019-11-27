@@ -5,6 +5,9 @@ import styled from "styled-components"
 import SEO from "./seo"
 import Img from "gatsby-image"
 
+import twitterIcon from '../images/twitter.svg'
+import fbIcon from '../images/facebook.svg'
+
 const PostContent = styled.main `
   font-family:Montserrat;
   color:#707070;
@@ -155,6 +158,34 @@ const PostContent = styled.main `
   }
 
 `
+
+const ShareIcons = styled.section `
+    width:100%;
+    padding-bottom:2rem;
+    
+    h3 {
+        text-align:center;
+        font-family:playfair display;
+        font-weight:400;
+        font-size:2rem;
+    }
+
+    ul {
+        margin:auto;
+        text-align:center;
+
+
+    }
+    li {
+        display:inline;
+    }
+    img {
+        max-width:50px;
+        margin-left:2rem;
+        margin-right:2rem;
+        margin-bottom:2rem;
+    }
+`
    
 
 
@@ -180,6 +211,21 @@ export default ({data}) => {
         <div className="content" dangerouslySetInnerHTML={{__html: post.html }} />
       </section>
     </PostContent>
+    <ShareIcons>
+        <h3>Share</h3>
+        <ul>
+            <li>
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=https://www.johndory.uk/posts${post.frontmatter.slug}`} target="_blank" rel="noopener noreferrer">
+                    <img src={fbIcon} alt="facebook" />
+                </a>
+            </li>
+            <li>
+                <a href={`https://twitter.com/intent/tweet/?text=${post.frontmatter.title}&url=https://www.johndory.uk/posts${post.frontmatter.slug}`} target="blank" rel="noopener noreferrer">
+                    <img src={twitterIcon} alt="twitter" />
+                </a>
+            </li>
+        </ul>
+    </ShareIcons>
     </Layout>
   )
 }

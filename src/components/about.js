@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from "styled-components"
 
 const AboutMain = styled.section `
-    font-family:Raleway;
+    font-family:Montserrat;
     max-width:1200px;
     margin:auto;
     margin-top:3rem;
