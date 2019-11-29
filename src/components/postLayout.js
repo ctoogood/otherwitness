@@ -198,7 +198,8 @@ export default ({data}) => {
       <SEO 
         title={post.frontmatter.title + ` - ` + post.frontmatter.subheading}
         image={post.frontmatter.featuredImage.childImageSharp.original.src}
-        description={post.frontmatter.description}/>
+        description={post.frontmatter.description}
+        pathname={post.frontmatter.slug}/>
     <PostContent>
 
       <section className="markdown">

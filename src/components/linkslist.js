@@ -190,7 +190,7 @@ class ArticleList extends React.Component {
 
     return (
       <Layout>
-        <SEO title="Home" />
+        <SEO title="Human Rights Journalism Links" />
         <Main>
         <HeaderImage />
         <hr />

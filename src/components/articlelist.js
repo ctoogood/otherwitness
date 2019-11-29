@@ -250,15 +250,15 @@ class ArticleList extends React.Component {
 
     return (
       <Layout>
-     <SEO title="Home" />
+     <SEO title="All Posts" />
         <Main>
-        <h2>ALL ARTICLES</h2>
+        <h2>ALL POSTS</h2>
         <PostsList>
           
         {posts.map(({ node }) => {
           return (
           <Post key={node.frontmatter.slug} >
-          <Link to={`/posts${node.frontmatter.slug}`}>
+          <Link to={`/${node.frontmatter.slug}`}>
 
           <div className="image-container">
               <Img className="post-image" fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
