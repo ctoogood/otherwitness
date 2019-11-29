@@ -23,10 +23,6 @@ function SEO({ description, lang, meta, image, keywords, title }) {
                 content: metaDescription,
               },
               {
-                property:`og:url`,
-                content:"https://www.otherwitness.com",
-              },
-              {
                 property: `og:title`,
                 content: title,
               },
