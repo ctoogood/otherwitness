@@ -109,7 +109,7 @@ const Post = styled.article`
 
         h4 {
             font-weight:normal;
-            font-family: Enjoying Life Alternates;
+            font-family: Montserrat;
             margin-bottom:10px;
             font-size:2rem;
             line-height:1.5;
