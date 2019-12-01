@@ -207,7 +207,7 @@ export default ({data}) => {
           <Img className="post-image" fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />
         </div>
         <h1>{post.frontmatter.title}</h1>
-        <h2><span><em>{post.frontmatter.subheading}</em></span></h2>
+        <h2><span>{post.frontmatter.subheading}</span></h2>
         <h3>{post.frontmatter.date}</h3>
         <div className="content" dangerouslySetInnerHTML={{__html: post.html }} />
       </section>
